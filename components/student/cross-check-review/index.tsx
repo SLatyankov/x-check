@@ -27,15 +27,12 @@ const CrossCheckReviewPage: React.FC<PropsCrossCheckPage> = ({
 }) => {
   const role = Role.student;
   const typeTask = TypeTask.ReviewTask;
-  let authorizedStudent = {} as IStudent;
+  let authorizedStudent: IStudent = {
+    id: 'NlAJHlGjoXa4VrIKP1MNQeiAfW62',
+    name: 'SkaymanT',
+    isAuditorAnonim: false,
+  };
 
-  if (auth.currentUser !== null && auth.currentUser.displayName !== null) {
-    authorizedStudent = {
-      id: auth.currentUser.uid,
-      name: auth.currentUser.displayName,
-      isAuditorAnonim: false,
-    };
-  }
   const [task, setTask] = React.useState<ITask>({} as ITask);
   const [changeOutside, setChangeOutside] = React.useState<boolean>(false);
   const [isDeadline, setIsDeadline] = React.useState(false);
@@ -44,7 +41,6 @@ const CrossCheckReviewPage: React.FC<PropsCrossCheckPage> = ({
   const [activeWorkDone, setActiveWorkDone] = React.useState<IWorkDone>({} as IWorkDone);
 
   let taskJSX: JSX.Element = <></>;
-
   const onSave = (checkingTask: ICheсk) => {
     let saveWorkDone: IWorkDone;
     if (
@@ -97,7 +93,6 @@ const CrossCheckReviewPage: React.FC<PropsCrossCheckPage> = ({
         isAuditorAnonim: false,
       };
     }
-
     if (tasksData.length !== 0 && courseData.length !== 0) {
       const select = tasksData.filter((taskData) => taskData.id === selectTaskID);
       if (select.length !== 0) {

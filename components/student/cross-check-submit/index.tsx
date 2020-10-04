@@ -59,11 +59,6 @@ const CrossCheckSubmitPage: React.FC<PropsCrossCheckPage> = ({
     initCrossCheckSubmit(activeUser, tasksData, completedTasksData, courseData)
   );
 
-  console.log('usersData', usersData);
-  console.log('tasksData', tasksData);
-  console.log('courseData', courseData);
-  console.log('completedTasksData', completedTasksData);
-
   let taskJSX: JSX.Element = <></>;
 
   const selectTask = (selectTaskID: string) => {
