@@ -75,7 +75,11 @@ const TableNewTask: React.FC<PropsTableNewTask> = ({
       dataIndex: 'id',
       render: (_: any, text: any) => (
         <Space size="middle">
-          <Popconfirm title="Sure to published?" onConfirm={() => onClickPublished(_, text)}>
+          <Popconfirm
+            title="Sure to published?"
+            disabled={text.state === StateTask.published || text.state === StateTask.active}
+            onConfirm={() => onClickPublished(_, text)}
+          >
             <Button
               key={text}
               disabled={text.state === StateTask.published || text.state === StateTask.active}
@@ -83,7 +87,11 @@ const TableNewTask: React.FC<PropsTableNewTask> = ({
               Published
             </Button>
           </Popconfirm>
-          <Popconfirm title="Sure to active?" onConfirm={() => onClickActive(_, text)}>
+          <Popconfirm
+            title="Sure to active?"
+            disabled={text.state === StateTask.active}
+            onConfirm={() => onClickActive(_, text)}
+          >
             <Button key={text} disabled={text.state === StateTask.active}>
               Active
             </Button>

@@ -14,6 +14,7 @@ const ActiveTask: React.FC<AProps> = ({ dataSession, getActiveTask }) => {
   useEffect(() => {
     const filter = dataSession.tasks.filter((e) => e.taskStage !== 'ARCHIVED');
     setFilterDataSession(filter);
+    console.log(filterDataSession)
   }, []);
   const onSelected = (value: string) => {
     getActiveTask(value);

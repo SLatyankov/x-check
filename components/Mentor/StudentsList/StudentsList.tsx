@@ -33,7 +33,7 @@ const StudentsList: React.FC<PropsStudentList> = ({ userData, getTask, myUid }) 
           return userData.filter((i) => e === i.uid)[0];
         })
       );
-      setUsers(userData.filter((e) => e.uid !== myUid && !e.mentor));
+      setUsers(userData.filter((e) => e.uid !== myUid));
     }
   }, [myUid]);
 

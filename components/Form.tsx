@@ -30,7 +30,7 @@ const Myform: React.FC<{ task: any}> = ({ task }) => {
       const criteriaPoint = {
         criteriaPointID: values.criterias[i].criteriaPointName,
         criteriaPointName: values.criterias[i].criteriaPointName,
-        criteriaPointScore: values.criterias[i].criteriaPointScore,
+        criteriaPointScore: Number(values.criterias[i].criteriaPointScore),
         isFine: values.criterias[i].isFine && values.criterias[i].isFine !== 'false' ? true : false,
         isThisPointForAMentor:
           values.criterias[i].isThisPointForAMentor &&
