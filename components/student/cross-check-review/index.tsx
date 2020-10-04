@@ -86,13 +86,6 @@ const CrossCheckReviewPage: React.FC<PropsCrossCheckPage> = ({
   };
 
   const selectTask = (selectTaskID: string) => {
-    if (auth.currentUser !== null && auth.currentUser.displayName !== null) {
-      authorizedStudent = {
-        id: auth.currentUser.uid,
-        name: auth.currentUser.displayName,
-        isAuditorAnonim: false,
-      };
-    }
     if (tasksData.length !== 0 && courseData.length !== 0) {
       const select = tasksData.filter((taskData) => taskData.id === selectTaskID);
       if (select.length !== 0) {
